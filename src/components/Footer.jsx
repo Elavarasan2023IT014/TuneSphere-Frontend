@@ -1,5 +1,5 @@
 import { FaGithub, FaTwitter, FaInstagram } from 'react-icons/fa';
-import './footer.css'; // Import the custom CSS file
+import './Footer.css'; // Import the custom CSS file
 
 function Footer() {
   return (
