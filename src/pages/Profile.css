@@ -1,0 +1,494 @@
+/* Profile.css */
+:root {
+  --primary-color: #8b5cf6;
+  --secondary-color: #7c3aed;
+  --background-color: #111827;
+  --card-background: #1f2937;
+  --text-primary: #f3f4f6;
+  --text-secondary: #9ca3af;
+  --success-color: #10b981;
+  --error-color: #ef4444;
+  --border-color: #374151;
+  --hover-color: #4c1d95;
+  --input-background: #374151;
+  --border-radius: 12px;
+  --transition-speed: 0.3s;
+  --modal-overlay: rgba(0, 0, 0, 0.75);
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--text-primary);
+  margin: 0;
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.profile-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  min-height: 100vh;
+}
+
+/* User Details Section */
+.user-details {
+  background-color: var(--card-background);
+  padding: 2rem;
+  border-radius: var(--border-radius);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.2);
+  margin-bottom: 2rem;
+  border: 1px solid var(--border-color);
+  animation: slideDown 0.5s ease-out;
+}
+
+.user-details h2 {
+  color: var(--text-primary);
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.user-details p {
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Password Update Section */
+.update-password-button {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  font-weight: 600;
+  transition: all var(--transition-speed);
+}
+
+.update-password-button:hover {
+  background-color: var(--hover-color);
+  transform: translateY(-2px);
+}
+
+.password-update-form {
+  margin-top: 1rem;
+  display: flex;
+  gap: 1rem;
+  animation: fadeIn 0.3s ease-out;
+}
+
+.password-update-form input {
+  flex: 1;
+  padding: 0.75rem;
+  border: 2px solid var(--border-color);
+  border-radius: var(--border-radius);
+  font-size: 1rem;
+  background-color: var(--input-background);
+  color: var(--text-primary);
+  transition: border-color var(--transition-speed);
+}
+
+.password-update-form input:focus {
+  border-color: var(--primary-color);
+  outline: none;
+}
+
+/* Mood Section */
+.mood-section {
+  background-color: var(--card-background);
+  padding: 2rem;
+  border-radius: var(--border-radius);
+  margin-bottom: 2rem;
+  border: 1px solid var(--border-color);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.2);
+}
+
+.mood-section h2 {
+  color: var(--text-primary);
+  margin-bottom: 1.5rem;
+}
+
+.mood-buttons {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+}
+
+.mood-button {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  transition: all var(--transition-speed);
+  font-weight: 600;
+  color: white;
+  backdrop-filter: blur(8px);
+}
+
+.mood-button:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.1);
+}
+
+.mood-happy {
+  background-color: #b45309;
+}
+.mood-sad {
+  background-color: #1d4ed8;
+}
+.mood-energetic {
+  background-color: #be123c;
+}
+.mood-relaxed {
+  background-color: #047857;
+}
+.mood-romantic {
+  background-color: #9d174d;
+}
+
+.mood-icon {
+  font-size: 1.5rem;
+}
+
+.active-mood {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+}
+
+/* Playlist Section */
+.playlist-section {
+  background-color: var(--card-background);
+  padding: 2rem;
+  border-radius: var(--border-radius);
+  border: 1px solid var(--border-color);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.2);
+}
+
+.playlist-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.playlist-header h2 {
+  color: var(--text-primary);
+}
+
+.playlist-header button {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: var(--success-color);
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  font-weight: 600;
+  transition: all var(--transition-speed);
+}
+
+.playlist-header button:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.1);
+}
+
+.create-playlist-form {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  animation: fadeIn 0.3s ease-out;
+}
+
+.create-playlist-form input {
+  flex: 1;
+  padding: 0.75rem;
+  border: 2px solid var(--border-color);
+  border-radius: var(--border-radius);
+  background-color: var(--input-background);
+  color: var(--text-primary);
+}
+
+.create-playlist-form button {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  font-weight: 600;
+  transition: all var(--transition-speed);
+}
+
+.create-playlist-form button:first-of-type {
+  background-color: var(--success-color);
+  color: white;
+}
+
+.create-playlist-form button:last-of-type {
+  background-color: var(--error-color);
+  color: white;
+}
+
+.playlists {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.playlist-card {
+  background-color: var(--input-background);
+  padding: 1.5rem;
+  border-radius: var(--border-radius);
+  border: 1px solid var(--border-color);
+  transition: all var(--transition-speed);
+}
+
+.playlist-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.playlist-card h3 {
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+}
+
+.playlist-card p {
+  color: var(--text-secondary);
+  margin-bottom: 1rem;
+}
+
+.playlist-card button {
+  width: 100%;
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 0.75rem 1rem;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  transition: all var(--transition-speed);
+}
+
+.playlist-card button:hover {
+  background-color: var(--hover-color);
+}
+
+/* Modal Styles */
+.playlist-modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: var(--card-background);
+  padding: 2rem;
+  border-radius: var(--border-radius);
+  border: 1px solid var(--border-color);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+  width: 90%;
+  max-width: 600px;
+  max-height: 80vh;
+  overflow-y: auto;
+  z-index: 1000;
+  animation: modalSlideUp 0.3s ease-out;
+}
+
+.song-container {
+  margin-bottom: 2rem;
+  display: grid;
+  gap: 1rem;
+}
+
+.song-card {
+  background-color: var(--input-background);
+  padding: 1rem;
+  border-radius: var(--border-radius);
+  border: 1px solid var(--border-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  transition: all var(--transition-speed);
+}
+
+.song-card:hover {
+  transform: translateX(4px);
+  border-color: var(--primary-color);
+}
+
+.song-card h6 {
+  margin: 0;
+  color: var(--text-primary);
+  font-size: 1rem;
+}
+
+.song-url {
+  color: var(--primary-color);
+  text-decoration: none;
+  font-size: 0.9rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 200px;
+}
+
+.song-url:hover {
+  text-decoration: underline;
+}
+
+.delete-button {
+  background-color: var(--error-color);
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  transition: all var(--transition-speed);
+}
+
+.delete-button:hover {
+  filter: brightness(1.1);
+}
+
+.add-song-section {
+  display: grid;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border-color);
+}
+
+.add-song-section input {
+  padding: 0.75rem;
+  border: 2px solid var(--border-color);
+  border-radius: var(--border-radius);
+  background-color: var(--input-background);
+  color: var(--text-primary);
+  font-size: 1rem;
+  transition: all var(--transition-speed);
+}
+
+.add-song-section input:focus {
+  border-color: var(--primary-color);
+  outline: none;
+}
+
+.add-song-section button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background-color: var(--success-color);
+  color: white;
+  border: none;
+  padding: 0.75rem;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  font-weight: 600;
+  transition: all var(--transition-speed);
+}
+
+.add-song-section button:hover {
+  filter: brightness(1.1);
+  transform: translateY(-2px);
+}
+
+/* Animations */
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes modalSlideUp {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -45%);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+}
+
+/* Modal Overlay */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--modal-overlay);
+  z-index: 999;
+  animation: fadeIn 0.3s ease-out;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .profile-container {
+    padding: 1rem;
+  }
+
+  .mood-buttons {
+    gap: 0.5rem;
+  }
+
+  .mood-button {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+  }
+
+  .playlist-modal {
+    width: 95%;
+    padding: 1.5rem;
+  }
+
+  .song-card {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .song-url {
+    max-width: 100%;
+  }
+
+  .create-playlist-form {
+    flex-direction: column;
+  }
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--background-color);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primary-color);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--hover-color);
+}
